@@ -47,8 +47,8 @@ def show_page():
     # Display feature engineering details for each step
     st.subheader('Feature Engineering Details')
     st.markdown("""
-    1. **userId and movieId: One-Hot Encoding**
-    The 'userId' and 'movieId' columns were one-hot encoded to convert them into a binary format suitable for machine learning models.
+    1. **userId: One-Hot Encoding**
+    The 'userId' columns were one-hot encoded to convert them into a binary format suitable for machine learning models.
 
     2. **Title: TF-IDF (Term Frequency-Inverse Document Frequency)**
     The 'title' column was processed using TF-IDF to convert movie titles into numerical features while considering their importance in the dataset.

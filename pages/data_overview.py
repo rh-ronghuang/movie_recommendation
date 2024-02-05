@@ -8,7 +8,7 @@ def load_data():
     return movies_df, ratings_df
 
 def show_page():
-    st.title('Data Overview Page')
+    st.title('Data Overview')
     
     movies_df, ratings_df = load_data()
     

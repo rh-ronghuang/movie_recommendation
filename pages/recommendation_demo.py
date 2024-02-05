@@ -97,8 +97,14 @@ def recommend(userId, k):
         
     # check top5 highest rated movies for userId in test dataset
     X_top5_emb = []
+    X_top5_movies = []
     for movieId in userId_top_5_movies[userId]:
+        if len(X_top5_emb) == 5:
+            break
+        if movieId not in movies_emb:
+            continue
         X_top5_emb.append(movies_emb[movieId])
+        X_top5_movies.append(movieId)
 
     X_top5_emb = np.concatenate(X_top5_emb, axis=0)
     user_emb_broadcasted = np.tile(userId_emb[userId], (X_top5_emb.shape[0], 1))
@@ -107,7 +113,7 @@ def recommend(userId, k):
     # predict scores for top5 movies
     top_5_test = []
     X_top5_emb_predicted_ratings = model.predict(X_top5_emb).flatten()
-    for i, movieId in enumerate(userId_top_5_movies[userId]):
+    for i, movieId in enumerate(X_top5_movies):
         predicted_score = bin_edges[np.digitize(X_top5_emb_predicted_ratings[i], bin_edges) - 1] 
         top_5_test.append([movieId, predicted_score, ratings_by_user_test[userId][movieId]])    
     

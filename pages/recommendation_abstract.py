@@ -31,7 +31,7 @@ def show_page():
     # Evaluation on Test Dataset
     st.subheader("Model Evaluation")
     st.markdown("""
-    After evaluation on the test dataset, the model achieved a Root Mean Squared Error (RMSE) of 0.9163. This metric helps in understanding the model's accuracy in predicting movie scores.
+    After evaluation on the test dataset, the model achieved a Root Mean Squared Error (RMSE) of  1.0733. This metric helps in understanding the model's accuracy in predicting movie scores.
     """)
 
     # Recommendation Rationale
