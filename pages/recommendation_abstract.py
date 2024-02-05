@@ -22,7 +22,7 @@ def show_page():
     
     The model is compiled with the Adam optimizer and mean squared error loss function.
     """)
-    st.image("images/train_validation_loss.png", caption="Training and Validation Loss")
+    # st.image("images/train_validation_loss.png", caption="Training and Validation Loss")
 
     # Model Training and Validation Loss
     st.subheader("Model Training and Validation Loss")

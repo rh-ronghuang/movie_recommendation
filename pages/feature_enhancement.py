@@ -44,3 +44,20 @@ def show_page():
     5. **Movie Average Rating:** Lastly, a 'movie_average_rating' column was added to reflect the average rating each movie received within the training dataset. This offers a direct measure of a movie's overall reception by users.
     """)
 
+    # Display feature engineering details for each step
+    st.subheader('Feature Engineering Details')
+    st.markdown("""
+    1. **userId and movieId: One-Hot Encoding**
+    The 'userId' and 'movieId' columns were one-hot encoded to convert them into a binary format suitable for machine learning models.
+
+    2. **Title: TF-IDF (Term Frequency-Inverse Document Frequency)**
+    The 'title' column was processed using TF-IDF to convert movie titles into numerical features while considering their importance in the dataset.
+
+    3. **Genres: MultiLabel Binarization**
+    The 'genres' column, originally containing multiple genres for each movie, was transformed using MultiLabel Binarization to create binary features for each genre.
+
+    4. **Year, User Average Rating, Movie Rated Count, Movie Average Rating: Min-Max Scaling**
+    The 'year', 'user_average_rating', 'movie_rated_cnt', and 'movie_average_rating' columns were normalized using Min-Max scaling to bring them within a common range, making them suitable for modeling.
+    """)
+
+
